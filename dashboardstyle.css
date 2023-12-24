@@ -1,0 +1,106 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.sidebar {
+    height: 100%;
+    width: 200px; /* Adjusted width */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #AD2727;
+    padding-top: 20px;
+    padding-left: 10px;
+    color: white;
+}
+
+h1 {
+    font-size: small;
+    display: inline-block;
+    padding-top: 10px;
+}
+
+.nav-link {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 8px 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background-color: #ffffff;
+    border-right-width: auto;
+    color: #AD2727;
+}
+
+.dropdown-menu {
+    background-color: #AD2727;
+}
+
+.dropdown-item {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #AD2727;
+    color: #ffffff;
+    width: auto;
+}
+
+.logo {
+    padding-bottom: 20px;
+    height: 100px;
+}
+
+.option {
+    color: #ffffff;
+}
+
+.dropdown-item img {
+    margin-right: 10px;
+    max-width: 30px;
+    max-height: 30px;
+    vertical-align: middle;
+}
+
+.noborder {
+    border: none;
+}
+
+.card-container {
+    margin-left: 220px; /* Adjusted margin */   
+    margin-right: auto;
+
+}
+
+#row1{
+    margin-left: 400px; /* Adjusted margin */   
+}
+
+/* Add this style to make sure cards don't go under the sidebar when the screen is small */
+@media (max-width: 767.98px) {
+    .card-container {
+        margin-left: 0;
+    }
+}
+
+.logout{
+    position: absolute;
+    right: 400px;
+}
+
+.card-text{
+    font-size: 40px;
+}
+
+.card {
+    margin-right: 90px; /* Adjust this value based on your design preferences */
+    
+}
