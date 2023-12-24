@@ -21,7 +21,6 @@ Route::get('/', function () {
 Route::get('/manageinstansi', [instansicontroller::class, 'index']) -> name('manageinstansi.index');
 Route::get('/manageinstansi/create', [instansicontroller::class,'create']) -> name('manageinstansi.create');
 Route::post('(/manageinstnasi/store', [InstansiController::class,'store']) -> name('manageinstansi.store');
-Route::get('/manageinstansi/{id}', [InstansiController::class, 'show'])->name('manageinstansi.show');
 Route::get('/manageinstansi/{id}/edit', [InstansiController::class, 'edit'])->name('manageinstansi.edit');
 Route::delete('/manageinstansi/{id}', [InstansiController::class, 'destroy'])->name('manageinstansi.destroy');
-
+Route::post('/update-data/{id}', [InstansiController::class, 'update'])->name('manageinstansi.update');

@@ -13,6 +13,7 @@
                 <th>Lokasi</th>
                 <th>Jumlah Pegawai</th>
                 <th>link Web Instansi</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -23,17 +24,13 @@
                   <td>{{ $instansi->jumlah_pegawai }}</td>
                   <td>{{ $instansi->link_web_instansi }}</td>
                   <td>
-            <!-- Tautan untuk menampilkan detail -->
-            <a href="{{ route('manageinstansi.show', $instansi->id) }}">Show</a>
-
             <!-- Tautan untuk mengedit data -->
-            <a href="{{ route('manageinstansi.edit', $instansi->id) }}">Edit</a>
-
+           <a class="btn btn-warning" href="{{ route('manageinstansi.edit', $instansi->id) }}">Edit</a>
             <!-- Form untuk menghapus data -->
             <form action="{{ route('manageinstansi.destroy', $instansi->id) }}" method="post" style="display: inline-block;">
                 @csrf
                 @method('delete')
-                <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+                <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')">Delete</button>
             </form>
           </td>
         </tr>
