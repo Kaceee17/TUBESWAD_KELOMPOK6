@@ -15,7 +15,7 @@
         <input id="jumlahpegawai" name="jumlah_pegawai" value="{{ $instansi->jumlah_pegawai}}" type="text" required placeholder="Masukkan Jumlah Pegawai">
         <label for="linkweb">Link Web Instansi</label>
         <input id="linkweb" name="link_web_instansi" value="{{ $instansi->link_web_instansi }}" type="text" required placeholder="Masukkan Link Web Instansi">
-        <button class="btn btn-primary" type="submit" style="margin-top: 40px;">Update</button>
+        <button class="btn btn-danger" type="submit" style="margin-top: 40px;">Update</button>
       </form>
     </div>
   </section>
