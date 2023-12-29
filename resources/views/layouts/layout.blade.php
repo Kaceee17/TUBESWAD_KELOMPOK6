@@ -1,250 +1,126 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  {{-- load css file --}}
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Rubik+Distressed&display=swap");
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="dashboard.css" rel="stylesheet" >
+    <base href="foto">
+    <base href="/">
+    <!-- Di bagian head atau sebelum penggunaan -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
 
-    body {
-      font-family: "Poppins", sans-serif;
-    }
 
-    .navbar a {
-      color: #e0e0e0;
-      font-weight: 600;
-    }
+    <style>
+      body {
+    font-family: 'Arial', sans-serif;
+      }
 
-    .navbar a:hover {
-      color: #fff;
-    }
+      .sidebar {
+          height: 100%;
+          width: 200px; /* Adjusted width */
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #AD2727;
+          padding-top: 20px;
+          padding-left: 10px;
+          color: white;
+      }
 
-    /* Jumbotron */
-    #home h1 {
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 800;
-      font-size: 56px;
-      line-height: 66px;
-      letter-spacing: 1.2px;
-      text-transform: capitalize;
-    }
+      h1 {
+          font-size: small;
+          display: inline-block;
+          padding-top: 10px;
+      }
 
-    #home p {
-      font-style: normal;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 23px;
-      letter-spacing: 0.2px;
-    }
+      .nav-link {
+          border: 1px solid transparent;
+          border-radius: 5px;
+          padding: 8px 10px;
+          margin-bottom: 5px;
+          cursor: pointer;
+          color: white;
+      }
 
-    #home .wrap {
-      margin-top: 200px;
-    }
+      .nav-link:hover,
+      .nav-link:focus {
+          background-color: #ffffff;
+          border-right-width: auto;
+          color: #AD2727;
+      }
 
-    #home .img {
-      width: 750px;
-      height: 500px;
-    }
+      .dropdown-menu {
+          background-color: #AD2727;
+      }
 
-    /* Add Page */
-    #form {
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
+      .dropdown-item {
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+      }
 
-    #form .add {
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 32px;
-      line-height: 38px;
-    }
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+          background-color: #AD2727;
+          color: #ffffff;
+          width: auto;
+      }
 
-    #form .tambahp {
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-      color: #757575;
-    }
+      .logo {
+          padding-bottom: 20px;
+          height: 100px;
+      }
 
-    #form form {
-      margin-top: 50px;
-    }
+      .option {
+          color: #ffffff;
+      }
 
-    #form label,
-    input {
-      display: block;
-    }
+      .dropdown-item img {
+          margin-right: 10px;
+          max-width: 30px;
+          max-height: 30px;
+          vertical-align: middle;
+      }
 
-    #form label {
-      font-size: 20px;
-      line-height: 24px;
-      letter-spacing: 1.2px;
-      margin-top: 30px;
-    }
+      .noborder {
+          border: none;
+      }
 
-    #form input {
-      width: 1000px;
-      height: 50px;
-      border: 1px solid #757575;
-      border-radius: 8px;
-      margin-top: 20px;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
+      .card-container {
+          margin-left: 220px; /* Adjusted margin */
+      }
 
-    #form textarea {
-      padding: 20px;
-      margin-top: 20px;
-    }
+      /* Add this style to make sure cards don't go under the sidebar when the screen is small */
+      @media (max-width: 767.98px) {
+          .card-container {
+              margin-left: 0;
+          }
+      }
 
-    /* List Pages */
-    #list {
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
+      .table{
+          margin-top: 20px;
+      }
 
-    #list h1 {
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 900;
-      font-size: 32px;
-      line-height: 38px;
-    }
-
-    #list p {
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-      color: #757575;
-      margin-top: 20px;
-    }
-
-    #list .card {
-      background: #ffffff;
-      box-shadow: 6px 14px 40px rgba(210, 210, 210, 0.6);
-      border-radius: 16px;
-      width: 400px;
-      margin-top: 50px;
-    }
-
-    /* Detail Page */
-    #detail {
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
-
-    #detail .tambahh1 {
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 32px;
-      line-height: 38px;
-    }
-
-    #detail .tambahp {
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-      color: #757575;
-    }
-
-    #detail img {
-      width: 500px;
-      height: 500px;
-      object-fit: contain;
-      border-radius: 16px;
-      margin-top: 20px;
-    }
-
-    #detail label,
-    input {
-      display: block;
-    }
-
-    #detail label {
-      font-size: 20px;
-      line-height: 24px;
-      letter-spacing: 1.2px;
-      margin-top: 30px;
-    }
-
-    #detail input {
-      width: 600px;
-      height: 50px;
-      border: 1px solid #757575;
-      border-radius: 8px;
-      margin-top: 20px;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-
-    #detail textarea {
-      padding: 20px;
-      margin-top: 20px;
-    }
-
-    #login .left {
-      background-image: url("../images/hrv.png");
-      background-size: cover;
-    }
-
-    .required {
-      color: red;
-    }
-
-    /* Profile Page */
-    #profile label {
-      width: 20%;
-    }
-
-    #profile .profile input {
-      width: 950px;
-      height: 40px;
-      background: #ffffff;
-      border: 1px solid #000000;
-      border-radius: 10px;
-      padding-left: 10px;
-    }
-
-    #profile h1 {
-      margin-left: auto;
-      margin-right: auto;
-      padding-bottom: 20px;
-    }
-
-    #profile .profile h2 {
-      font-size: 20px;
-      font-weight: 400;
-    }
-
-    .profile button {
-      width: 139px;
-      height: 50px;
-      border-radius: 8px;
-      border: none;
-      color: white;
-    }
-  </style>
-</head>
+      .logout{
+          position: absolute;
+          right: 100px;
+      }
+      </style>
 
 <body>
-  @include('layouts.Admin.navbaradm')
+  @include('layouts.admin.navbar')
+  @include('layouts.admin.sidebar')
+  @include('layouts.peminjam.navbarpinjam')
+  @include('layouts.peminjam.sidebarpinjam')
 
   @yield('content')
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+</body>
 </html>
+
