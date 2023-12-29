@@ -15,7 +15,7 @@
         <input id="warna" name="jumlah_pegawai" type="text" required placeholder="Masukkan Jumlah Pegawai">
         <label for="merk">Link Web Instansi</label>
         <input id="tipe" name="link_web_instansi" type="text" required placeholder="Masukkan Link Web Instansi">
-        <button class="btn btn-danger" type="submit" style="margin-top: 40px;">Selesai</button>
+        <button class="btn btn-primary" type="submit" style="margin-top: 40px;">Selesai</button>
       </form>
     </div>
   </section>

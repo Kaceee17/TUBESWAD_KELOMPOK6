@@ -35,7 +35,7 @@ class InstansiController extends Controller
     public function update(Request $request, $id)
     {
         $instansi = ManageInstansi::findOrFail($id);
-
+        
         $instansi->nama_instansi = $request->input('nama_instansi');
         $instansi->lokasi = $request->input('lokasi');
         $instansi->jumlah_pegawai = $request->input('jumlah_pegawai');

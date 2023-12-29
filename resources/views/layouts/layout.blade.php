@@ -14,13 +14,13 @@
       font-family: "Poppins", sans-serif;
     }
 
-    .navbar a {
-      color: #e0e0e0;
+    .navbar {
+      background: #ad2727;
       font-weight: 600;
     }
 
     .navbar a:hover {
-      color: #fff;
+      color: white;
     }
 
     /* Jumbotron */

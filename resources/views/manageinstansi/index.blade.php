@@ -3,12 +3,11 @@
 @section('content')
   <section id="list">
     <div class="container">
-      <h1>Daftar Instansi</h1>
+    <h1 class="p-3 mb-2 bg-body-secondary text-center mb-3">Daftar Instansi</h1>
       @if (count($manageinstansi) > 0)
         <div class="table-responsive">
           <table class="table-striped table">
             <thead>
-              <tr>
                 <th>Nama Instansi</th>
                 <th>Lokasi</th>
                 <th>Jumlah Pegawai</th>
@@ -41,6 +40,6 @@
   @else
   <p>Tidak ada daftar list instansi.</p>
   @endif
-    </div>
+    </>
   </section>
 @endsection

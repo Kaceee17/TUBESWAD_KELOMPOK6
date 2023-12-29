@@ -1,5 +1,5 @@
   <!-- Nav -->
-  <nav class="navbar navbar-expand navbar-dark bg-danger">
+  <nav class="navbar navbar-expand navbar-dark">
     <div class="container py-2">
       <div class="navbar-nav justify-content-between w-100">
         <a class="nav-link active" href="/" aria-current="page">Home</a>
