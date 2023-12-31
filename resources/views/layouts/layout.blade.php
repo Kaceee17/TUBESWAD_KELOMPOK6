@@ -241,6 +241,7 @@
 
 <body>
   @include('layouts.navbar')
+  @include()
 
   @yield('content')
 

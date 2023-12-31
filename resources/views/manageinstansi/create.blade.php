@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.sidebar')
 
 @section('content')
   <section id='form'>
