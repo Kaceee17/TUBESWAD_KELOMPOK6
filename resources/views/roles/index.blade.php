@@ -1,4 +1,4 @@
-@extends('layouts.navbar')
+@extends('layouts.sidebar')
 
 @section('content')
 <div class="card">

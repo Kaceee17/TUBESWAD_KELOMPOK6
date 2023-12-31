@@ -24,12 +24,13 @@ class AdminSeeder extends Seeder
         ]);
         $admin->assignRole('Admin');
 
-        // Creating Product Manager User
-        $productManager = User::create([
+        // Creating Pengelola User
+        $pengelola = User::create([
             'name' => 'alfialfi', 
             'email' => 'alfi123@gmail.com',
             'password' => Hash::make('alfi12345')
         ]);
-        $productManager->assignRole('Product Manager');
+        $pengelola->assignRole('Pengelola');
+        
     }
 }

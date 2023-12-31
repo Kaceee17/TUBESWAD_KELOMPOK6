@@ -18,13 +18,16 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <style>
     .navbar {
-    z-index: 2;
-    position: relative;
-    padding-left: 10;
-    padding-right: 10;
-    width: 1000vw;
+        z-index: 2;
+        position: sticky;
+        top: 0; /* Stick to the top edge */
+        left: 200px; /* Sidebar width */
+        right: 0; /* Stretch to the right edge */
+        padding-left: 10px;
+        padding-right: 10px;
+    /* width: 1000vw;
     margin-left: 200px;
-    margin-right: 0;
+    margin-right: 0; */
     }
 
     form.navbar-search {
@@ -69,6 +72,22 @@
     font-size: small;
     display: inline-block;
     padding-top: 10px;
+    }
+    #list h1 {
+      font-family: "Arial";
+      font-style: normal;
+      font-weight: 900;
+      font-size: 32px;
+      line-height: 38px;
+    }
+    #home h1 {
+      font-family: "Arial";
+      font-style: normal;
+      font-weight: 800;
+      /* font-size: 56px; */
+      line-height: 66px;
+      letter-spacing: 1.2px;
+      text-transform: capitalize;
     }
 
     .nav-link {
@@ -136,11 +155,11 @@
     }
 
     /* Add this style to make sure cards don't go under the sidebar when the screen is small */
-    @media (max-width: 767.98px) {
-    .card-container {
-        margin-left: 0;
+@media (max-width: 767.98px) {
+    .navbar {
+        left: 0; /* On smaller screens, the sidebar is typically collapsed */
     }
-    }
+}
 
     .table{
     margin-top: 20px;
@@ -326,153 +345,357 @@
     .bg-success {
     background-color: #1cc88a !important;
     }
+    body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-family: 'Arial', sans-serif;
+    }
+     /* Add Page */
+     #form-instan {
+      /* padding-top: 50px; */
+      padding-bottom: 50px;
+    }
+
+     #form-instan {
+      /* padding-top: 50px; */
+      padding-bottom: 50px;
+    }
+
+    #form-instan .add {
+      font-family: "Arial";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 38px;
+    }
+
+    #form-instan .tambahp {
+      font-family: "Arial";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #757575;
+    }
+
+    /* #form form {
+      margin-top: 50px;
+    } */
+
+    #form-instan label,
+    input {
+      display: block;
+    }
+
+    #form-instan label {
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 1.2px;
+      margin-top: 30px;
+    }
+
+    #form-instan input {
+      width: 1000px;
+      height: 50px;
+      border: 1px solid #757575;
+      border-radius: 8px;
+      margin-top: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    #form-instan textarea {
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    /* List Pages */
+    #list {
+      padding-top: 0px;
+      padding-bottom: 50px;
+    }
+
+    #list h1 {
+      font-family: "Arial";
+      font-style: normal;
+      font-weight: 900;
+      font-size: 32px;
+      line-height: 38px;
+    }
+
+    #list p {
+      font-family: "Arial";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #757575;
+      margin-top: 20px;
+    }
+
+    #list .card {
+      background: #ffffff;
+      box-shadow: 6px 14px 40px rgba(210, 210, 210, 0.6);
+      border-radius: 16px;
+      width: 400px;
+      margin-top: 50px;
+    }
+
+    /* Detail Page */
+    #detail {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    #detail .tambahh1 {
+      font-family: "Arial";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 38px;
+    }
+
+    #detail .tambahp {
+      font-family: "Arial";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #757575;
+    }
+
+    #detail img {
+      width: 500px;
+      height: 500px;
+      object-fit: contain;
+      border-radius: 16px;
+      margin-top: 20px;
+    }
+
+    #detail label,
+    input {
+      display: block;
+    }
+
+    #detail label {
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 1.2px;
+      margin-top: 30px;
+    }
+
+    #detail input {
+      width: 600px;
+      height: 50px;
+      border: 1px solid #757575;
+      border-radius: 8px;
+      margin-top: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    #detail textarea {
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    #login .left {
+      background-image: url("../images/hrv.png");
+      background-size: cover;
+    }
+
+    .required {
+      color: red;
+    }
+.sidebar {
+    height: 100%;
+    width: 200px; /* Adjusted width */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #AD2727;
+    padding-top: 20px;
+    padding-left: 10px;
+    color: white;
+}
+
+h1 {
+    font-size: small;
+    display: inline-block;
+    padding-top: 10px;
+}
+
+.nav-link {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 8px 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background-color: #ffffff;
+    border-right-width: auto;
+    color: #AD2727;
+}
+
+.dropdown-menu {
+    background-color: #AD2727;
+}
+
+.dropdown-item {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #AD2727;
+    color: #ffffff;
+    width: auto;
+}
+
+.logo {
+    padding-bottom: 20px;
+    height: 100px;
+}
+
+.option {
+    color: #ffffff;
+}
+
+.dropdown-item img {
+    margin-right: 10px;
+    max-width: 30px;
+    max-height: 30px;
+    vertical-align: middle;
+}
+
+.noborder {
+    border: none;
+}
+
+.card-container {
+    margin-left: 220px;
+    margin-right: auto;
+
+}
+
+#row1{
+    margin-left: 400px; /* Adjusted margin */   
+}
+
+/* Add this style to make sure cards don't go under the sidebar when the screen is small */
+@media (max-width: 767.98px) {
+    .card-container {
+        margin-left: 0;
+    }
+}
+
+.logout{
+    position: absolute;
+    right: 400px;
+}
+
+.card-text{
+    font-size: 40px;
+}
+
+.card {
+    margin-right: 90px; /* Adjust this value based on your design preferences */
+    
+}
+
         </style>
 
 </head>
 
 <body>
-<nav class="navbar navbar-expand navbar-dark bg-light">
-    <div class="container py-2">
-        <div class="navbar-nav justify-content-between w-100">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ asset('img/Logo Crop.png') }}" alt="TelU" height="50"></a>
-                <div class="d-flex justify-content-end">
-                    <a class="nav-link" href="{{ route('login') }}" style="color: black" >{{ __('Login') }}</a>
-                    <a class="nav-link" href="{{ route('register') }}" style="color: black" >{{ __('Register') }}</a>
-                </div>
-                <img src="{{ asset('img/logout.png') }}" alt="TelU" height="50" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre></a>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-md-2 sidebar p-0">
+            <img src="{{ asset('img/Logo Crop.png') }}" alt="Logo" class="d-inline-block align-text-top logo">
+            <table class="nav flex-column">
+                <!-- Sidebar Links -->
+                <tr class="nav-item">
+                    @canany(['create-product', 'edit-product', 'delete-product'])
+                    <td>
+                        <a class="nav-link active option" href="{{ route('products.index') }}">Peminjaman</a></td>
+                        @endcanany
+                </tr>
+                <tr class="nav-item">
+                    @canany(['create-role', 'edit-role', 'delete-role'])
+                    <td>
+                    <a class="nav-link active option" href="{{ route('kendaraans.index') }}">Master Kendaraan</a></td>
+                    @endcanany
+                </tr>
+                <tr class="nav-item">
+                    @canany(['create-role', 'edit-role', 'delete-role'])
+                    <td>
+                    <a class="nav-link active option" href="{{ route('manageinstansi.index') }}">Management Instansi</a></td>
+                    @endcanany
+                </tr>
+                <tr class="nav-item">
+                @canany(['create-role', 'edit-role', 'delete-role'])
+                    <td>
+                    <a class="nav-link active option" href="{{ route('home') }}">Management User</a></td>
+                @endcanany
+                </tr>
+                <tr class="nav-item">
+                @canany(['create-role', 'edit-role', 'delete-role'])
+                    <td>
+                        <a class="nav-link active option" href="Laporan.php">Pembayaran</a></td>
+                        @endcanany
+                </tr>
+            </table>
+        </div>
+    <!-- Navbar Internal -->
+    <div class="col-md-10" style="margin-left: 220px;">
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+    <!-- Sidebar Toggle (Topbar) for mobile view -->
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+    </button>
+
+    <!-- Left-aligned User Information -->
+    <div class="d-flex align-items-center">
+        <img class="img-profile rounded-circle" src="svg\undraw_profile.svg" width="40">
+        <span class="mr-2 d-none d-lg-inline text-gray-600 small" style="font-weight: bold; color: black;">{{ Auth::user()->name }}</span>
+    </div>
+
+    <!-- Spacer to push the logout icon to the right -->
+    <div class="spacer d-flex flex-grow-1"></div>
+
+    <!-- Right-aligned Logout Icon -->
+    <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                    <img src="{{ asset('img/logout.png') }}" alt="TelU" height="50" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre></a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
                 </div>
-            </div>
-        </div>
-    </div>
-</nav>
-<!-- Navbar -->
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                <!-- Sidebar Toggle (Topbar) -->
-                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                    <i class="fa fa-bars"></i>
-                </button>
+            </li>
+        </ul>
+    </nav>
+</div>
 
-                <!-- Topbar Search -->
-                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                    <div class="input-group">
-                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                                <img src="svg\search.svg" alt="Search" width="25">
-                            </button>
-                        </div>
-                    </div>
-                </form>
-
-                <!-- Topbar Navbar -->
-                <ul class="navbar-nav ml-auto">
-
-                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                    <li class="nav-item dropdown no-arrow d-sm-none">
-                        <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <!-- Dropdown - Messages -->
-                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                            <form class="form-inline mr-auto w-100 navbar-search">
-                                <div class="input-group">
-                                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="button">
-                                            <i class="fas fa-search fa-sm"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </li>
-
-                    
-                    <!-- Nav Item - Alerts -->
-                    <li class="nav-item dropdown no-arrow mx-1">
-                        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" 
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="svg\bell.svg" alt="Notification" width="25">
-                        </a>
-                        <!-- Dropdown - Alerts -->
-                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                            <h6 class="dropdown-header">
-                                Alerts Center
-                            </h6>
-                            <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                        </div>
-                    </li>
-
-                    <!-- Nav Item - Messages -->
-                    <li class="nav-item dropdown no-arrow mx-1">
-                        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" 
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="svg\message.svg" alt="Message" width="25">
-                        </a>
-                        <!-- Dropdown - Alerts -->
-                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                            <h6 class="dropdown-header">
-                                Message Center
-                            </h6>
-                            <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-                        </div>
-                    </li>
-
-                    <div class="topbar-divider d-none d-sm-block"></div>
-
-                    <!-- Nav Item - User Information -->
-                    <li class="nav-item dropdown no-arrow">
-                        <div class="d-flex align-items-center">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="vertical-divider"></span>
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small" style="font-weight: bold;">Pengelola</span>
-                                <img class="img-profile rounded-circle" src="svg\undraw_profile.svg" width="40">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    <img src="svg\profile.svg" alt="Logout Icon" class="mr-2" style="width: 20px; height: 20px;">
-                                    
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    <img src="svg\settings.svg" alt="Logout Icon" class="mr-2" style="width: 20px; height: 20px;">
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    <img src="svg\activitylog.svg" alt="Logout Icon" class="mr-2" style="width: 20px; height: 20px;">
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    <img src="svg\logout.svg" alt="Logout Icon" class="mr-2" style="width: 20px; height: 20px;">
-                                    Logout
-                                </a>
-                                
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
+</div>
             <!-- End of Navbar -->
+            
     <div id="app">
-        <main class="py-4">
-            <div class="container">
-                <div class="row justify-content-center mt-3">
-                    <div class="col-md-12">
+        
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-10 offset-md-2">
                         
                         @if ($message = Session::get('success'))
                             <div class="alert alert-success text-center" role="alert">
@@ -483,13 +706,13 @@
                         
                         @yield('content')
                         
-                        <div class="row justify-content-center text-center mt-3">
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+        
     </div>
+</div>
 </body>
 </html>
 

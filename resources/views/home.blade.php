@@ -5,6 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
+                
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
@@ -26,8 +27,8 @@
                             <i class="bi bi-people"></i> Manage Users</a>
                     @endcanany
                     @canany(['create-product', 'edit-product', 'delete-product'])
-                        <!-- <a class="btn btn-warning" href="{{ route('products.index') }}">
-                            <i class="bi bi-bag"></i> Manage Products</a> -->
+                        <a class="btn btn-warning" href="{{ route('products.index') }}">
+                            <i class="bi bi-bag"></i> Peminjaman</a>
                     @endcanany
                     <p>&nbsp;</p>
                 </div>
